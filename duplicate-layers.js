@@ -2,33 +2,34 @@ var assetsGroupName = 'Assets'
 var baseGroupName = 'Base'
 var testLayerIndex = 1
 var baseLayerIndex = 2
+var curveLayerIndex = 3
 var colors = [
-  {title: 'White', r: 230, g: 236, b: 255},
-  {title: 'Pale pink', r: 255, g: 192, b: 244},
-  {title: 'Pink', r: 255, g: 164, b: 233},
-  {title: 'Red', r: 218, g: 48, b: 44},
-  {title: 'Dark red', r: 201, g: 33, b: 42},
-  {title: 'Beige', r: 235, g: 213, b: 193},
-  {title: 'Pale violet', r: 215, g: 207, b: 255},
-  {title: 'Violet', r: 211, g: 116, b: 204},
-  {title: 'Grey', r: 173, g: 182, b: 205},
-  {title: 'Orange', r: 254, g: 188, b: 97},
-  {title: 'Mango', r: 242, g: 228, b: 137},
-  {title: 'Lemon', r: 247, g: 244, b: 109},
-  {title: 'Pale green', r: 143, g: 195, b: 150},
-  {title: 'Salad', r: 131, g: 213, b: 112},
-  {title: 'Green', r: 5, g: 182, b: 121},
-  {title: 'Emerald', r: 0, g: 147, b: 137},
-  {title: 'Light blue', r: 205, g: 234, b: 246},
-  {title: 'Blue', r: 0, g: 138, b: 228},
-  {title: 'Ultramarine', r: 28, g: 88, b: 203},
-  {title: 'Navy blue', r: 36, g: 48, b: 81},
-  {title: 'Black', r: 24, g: 24, b: 29},
-  {title: 'Mustard', r: 224, g: 196, b: 93},
-  {title: 'Khaki', r: 107, g: 101, b: 75},
-  {title: 'Terracotta', r: 227, g: 109, b: 87},
-  {title: 'Olive', r: 135, g: 141, b: 56},
-  {title: 'Dusty rose', r: 244, g: 165, b: 190},
+  {title: 'White', r: 230, g: 236, b: 255, input: [9, 242], gamma: 0.73, output: [92, 251]},
+  {title: 'Pale pink', r: 255, g: 192, b: 244, input: [6, 255], gamma: 0.67, output: [0, 255]},
+  {title: 'Pink', r: 255, g: 164, b: 233, input: [0, 255], gamma: 0.71, output: [27, 247]},
+  {title: 'Red', r: 218, g: 48, b: 44, input: [0, 255], gamma: 0.81, output: [22, 117]},
+  {title: 'Dark red', r: 201, g: 33, b: 42, input: [0, 255], gamma: 0.76, output: [4, 104]}, // update
+  {title: 'Beige', r: 235, g: 213, b: 193, input: [0, 255], gamma: 0.81, output: [80, 250]},
+  {title: 'Pale violet', r: 215, g: 207, b: 255, input: [0, 255], gamma: 0.80, output: [52, 231]},
+  {title: 'Violet', r: 211, g: 116, b: 204, input: [0, 255], gamma: 0.81, output: [8, 190]}, // update
+  {title: 'Grey', r: 173, g: 182, b: 205, input: [0, 255], gamma: 0.81, output: [0, 225]},
+  {title: 'Orange', r: 254, g: 188, b: 97, input: [0, 255], gamma: 0.81, output: [0, 247]},
+  {title: 'Mango', r: 242, g: 228, b: 137, input: [0, 255], gamma: 0.76, output: [79, 255]}, // update
+  {title: 'Lemon', r: 247, g: 244, b: 109, input: [0, 240], gamma: 0.78, output: [81, 254]},
+  {title: 'Pale green', r: 143, g: 195, b: 150, input: [0, 255], gamma: 0.81, output: [8, 216]},
+  {title: 'Salad', r: 131, g: 213, b: 112, input: [11, 255], gamma: 0.91, output: [0, 216]},
+  {title: 'Green', r: 5, g: 182, b: 121, input: [0, 255], gamma: 0.81, output: [13, 150]},
+  {title: 'Emerald', r: 0, g: 147, b: 137, input: [7, 255], gamma: 1.06, output: [0, 119]},
+  {title: 'Light blue', r: 205, g: 234, b: 246, input: [55, 255], gamma: 0.77, output: [151, 238]},
+  {title: 'Blue', r: 0, g: 138, b: 228, input: [0, 255], gamma: 0.81, output: [12, 131]},
+  {title: 'Ultramarine', r: 28, g: 88, b: 203, input: [1, 255], gamma: 0.76, output: [0, 102]},
+  {title: 'Navy blue', r: 36, g: 48, b: 81, input: [37, 255], gamma: 0.66, output: [0, 66]},
+  {title: 'Black', r: 24, g: 24, b: 29, input: [27, 255], gamma: 0.81, output: [0, 164]},
+  {title: 'Mustard', r: 224, g: 196, b: 93, input: [0, 255], gamma: 0.81, output: [8, 241]},
+  {title: 'Khaki', r: 107, g: 101, b: 75, input: [0, 255], gamma: 0.81, output: [0, 124]},  // update
+  {title: 'Terracotta', r: 227, g: 109, b: 87, input: [0, 255], gamma: 0.78, output: [0, 178]},
+  {title: 'Olive', r: 135, g: 141, b: 56, input: [0, 255], gamma: 0.71, output: [0, 166]},
+  {title: 'Dusty rose', r: 244, g: 165, b: 190, input: [2, 255], gamma: 0.81, output: [0, 238]},
 ]
 
 curDoc = app.activeDocument;
@@ -45,6 +46,7 @@ if (baseLayerSet) {
 
     var colorLayer = layerSetRef.layers[baseLayerIndex];
     var testLayer = layerSetRef.layers[testLayerIndex];
+    var curveLayer = layerSetRef.artLayers[curveLayerIndex];
 
     var colorRef = new SolidColor
     colorRef.rgb.red = colors[i].r
@@ -64,6 +66,18 @@ if (baseLayerSet) {
       // Convert Layer to Smart Object
       app.runMenuItem(stringIDToTypeID('newPlacedLayer'));
       colorBlend(colors[i]);
+    }
+
+    if (curveLayer) {
+      // Update levels for layer
+      curDoc.activeLayer = curveLayer
+      setLevelAdj(
+        colors[i].input[0],
+        colors[i].input[1],
+        colors[i].gamma,
+        colors[i].output[0],
+        colors[i].output[1]
+      )
     }
   }
 }
@@ -108,4 +122,76 @@ function colorBlend(color) {
   };
 
   step1();
+};
+
+function setLevelAdj(inBlack, inWhite, gamma, outBlack, outWhite) {
+
+  var d, d1, d2, l, l1, l2, r, r1, s2t;
+
+  if (outBlack == null) {
+
+    outBlack = 0;
+
+  }
+
+  if (outWhite == null) {
+
+    outWhite = 255;
+
+  }
+
+  s2t = function(s) {
+
+    return app.stringIDToTypeID(s);
+
+  };
+
+  d = new ActionDescriptor();
+
+  r = new ActionReference();
+
+  r.putEnumerated(s2t('adjustmentLayer'), s2t('ordinal'), s2t('targetEnum'));
+
+  d.putReference(s2t('target'), r);
+
+  d1 = new ActionDescriptor();
+
+  d1.putEnumerated(s2t('presetKind'), s2t('presetKindType'), s2t('presetKindCustom'));
+
+  l = new ActionList();
+
+  d2 = new ActionDescriptor();
+
+  r1 = new ActionReference();
+
+  r1.putEnumerated(s2t('channel'), s2t('channel'), s2t('composite'));
+
+  d2.putReference(s2t('channel'), r1);
+
+  l1 = new ActionList();
+
+  l1.putInteger(inBlack);
+
+  l1.putInteger(inWhite);
+
+  d2.putList(s2t('input'), l1);
+
+  d2.putDouble(s2t('gamma'), gamma);
+
+  l2 = new ActionList();
+
+  l2.putInteger(outBlack);
+
+  l2.putInteger(outWhite);
+
+  d2.putList(s2t('output'), l2);
+
+  l.putObject(s2t('levelsAdjustment'), d2);
+
+  d1.putList(s2t('adjustment'), l);
+
+  d.putObject(s2t('to'), s2t('levels'), d1);
+
+  return executeAction(s2t('set'), d, DialogModes.NO);
+
 };

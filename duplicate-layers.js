@@ -5,15 +5,15 @@ var baseLayerIndex = 2
 var curveLayerIndex = 3
 var colors = [
   {title: 'White', r: 230, g: 236, b: 255, input: [9, 242], gamma: 0.73, output: [92, 251]},
-  {title: 'Pale pink', r: 255, g: 192, b: 244, input: [6, 255], gamma: 0.67, output: [0, 255]},
-  {title: 'Pink', r: 255, g: 164, b: 233, input: [0, 255], gamma: 0.71, output: [27, 247]},
+  {title: 'Pale pink', r: 254, g: 201, b: 221, input: [6, 255], gamma: 0.67, output: [0, 255]}, // updated
+  {title: 'Pink', r: 252, g: 114, b: 165, input: [0, 255], gamma: 0.71, output: [27, 247]}, // updated
   {title: 'Red', r: 218, g: 48, b: 44, input: [0, 255], gamma: 0.81, output: [22, 117]},
-  {title: 'Dark red', r: 201, g: 33, b: 42, input: [0, 255], gamma: 0.76, output: [4, 104]}, // update
+  {title: 'Dark red', r: 201, g: 0, b: 0, input: [0, 255], gamma: 0.76, output: [4, 104]}, // updated
   {title: 'Beige', r: 235, g: 213, b: 193, input: [0, 255], gamma: 0.81, output: [80, 250]},
   {title: 'Pale violet', r: 215, g: 207, b: 255, input: [0, 255], gamma: 0.80, output: [52, 231]},
-  {title: 'Violet', r: 211, g: 116, b: 204, input: [0, 255], gamma: 0.81, output: [8, 190]}, // update
-  {title: 'Grey', r: 173, g: 182, b: 205, input: [0, 255], gamma: 0.81, output: [0, 225]},
-  {title: 'Orange', r: 254, g: 188, b: 97, input: [0, 255], gamma: 0.81, output: [0, 247]},
+  {title: 'Violet', r: 163, g: 75, b: 180, input: [0, 255], gamma: 0.81, output: [8, 190]}, // updated
+  {title: 'Grey melange', r: 173, g: 182, b: 205, input: [0, 255], gamma: 0.81, output: [0, 225]},
+  {title: 'Orange', r: 255, g: 119, b: 0, input: [0, 255], gamma: 0.81, output: [0, 247]}, // updated
   {title: 'Mango', r: 242, g: 228, b: 137, input: [0, 255], gamma: 0.76, output: [79, 255]}, // update
   {title: 'Lemon', r: 247, g: 244, b: 109, input: [0, 240], gamma: 0.78, output: [81, 254]},
   {title: 'Pale green', r: 143, g: 195, b: 150, input: [0, 255], gamma: 0.81, output: [8, 216]},
@@ -30,6 +30,19 @@ var colors = [
   {title: 'Terracotta', r: 227, g: 109, b: 87, input: [0, 255], gamma: 0.78, output: [0, 178]},
   {title: 'Olive', r: 135, g: 141, b: 56, input: [0, 255], gamma: 0.71, output: [0, 166]},
   {title: 'Dusty rose', r: 244, g: 165, b: 190, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Fuchsia', r: 171, g: 52, b: 117, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Dark violet', r: 66, g: 28, b: 82, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Pale blue', r: 129, g: 212, b: 250, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Light Green', r: 211, g: 248, b: 211, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Light Pink', r: 255, g: 230, b: 238, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Bluestone', r: 96, g: 133, b: 164, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Chocolate', r: 58, g: 30, b: 8, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Cappuccino', r: 161, g: 128, b: 114, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Graphite', r: 75, g: 78, b: 83, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Turquoise', r: 35, g: 211, b: 211, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Maroon', r: 124, g: 0, b: 62, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Milk', r: 253, g: 255, b: 245, input: [2, 255], gamma: 0.81, output: [0, 238]},
+  {title: 'Grey', r: 190, g: 190, b: 190, input: [2, 255], gamma: 0.81, output: [0, 238]},
 ]
 
 curDoc = app.activeDocument;

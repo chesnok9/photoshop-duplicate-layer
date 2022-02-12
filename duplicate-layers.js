@@ -124,7 +124,7 @@ function colorBlend(color) {
     desc3.putBoolean(sTID("showInDialog"), true);
     desc3.putEnumerated(cTID('Md  '), cTID('BlnM'), cTID('Nrml'));
     var desc4 = new ActionDescriptor();
-    desc4.getputDouble(cTID('Rd  '), color.r); // Red value
+    desc4.putDouble(cTID('Rd  '), color.r); // Red value
     desc4.putDouble(cTID('Grn '), color.g); // Green value
     desc4.putDouble(cTID('Bl  '), color.b); // Blue value
     desc3.putObject(cTID('Clr '), sTID("RGBColor"), desc4);
